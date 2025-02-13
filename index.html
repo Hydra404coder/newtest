@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Kisan Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { 
+            background: linear-gradient(to bottom, #76c7c0, #2e7d32),
+                        url('D:/projects/images/Start.jpg'); /* Gradient + Image */
+            background-size: cover;
+            background-blend-mode: overlay;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            z-index: 1;
+            background: rgb(255, 254, 254); /* Semi-transparent background for better readability */
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container login-container">
+        <h1><b>National Kisan Portal</b></h1>
+        <h2><i>India with 31.55 Million of Total Rural Population </i></h2>
+
+        <form id="loginForm">
+            <button type="button" id="loginBtn">Login</button>
+            <a href="fertilizer.html"><button type="button" id="registerBtn">Register</button></a>
+        </form>
+    </div>
+
+    <script>
+        // Prompt the user for soil test information
+        function askSoilTest() {
+            const soilTestResponse = prompt("Have you conducted a soil test? (Yes/No)").toLowerCase();
+            if (soilTestResponse === "no") {
+                alert("You need to conduct a soil test before proceeding. Cant proceed until provided");
+                // Reload the page to prevent further action
+                location.reload();
+            } else if (soilTestResponse === "yes") {
+                alert(`You answered: ${soilTestResponse}`);
+                // The user can proceed if they answered "Yes"
+            } else {
+                alert("Invalid input. Please refresh and provide a valid answer (Yes/No).");
+                location.reload();
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = function() {
+            askSoilTest();
+        };
+    </script>
+</body>
+</html>
